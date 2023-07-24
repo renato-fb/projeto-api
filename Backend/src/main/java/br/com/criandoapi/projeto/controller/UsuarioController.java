@@ -22,9 +22,6 @@ import br.com.criandoapi.projeto.repository.IUsuario;
 @CrossOrigin("*")
 @RequestMapping("/usuarios")
 public class UsuarioController {
-	
-	@Autowired
-	private IUsuario dao;
 
 	private UsuarioService usuarioService;
 	public UsuarioController(UsuarioService usuarioService) {
@@ -42,19 +39,19 @@ public class UsuarioController {
 	}
 	
 	@PutMapping
-	public ResponseEntity<Usuario> alterarrUsuario (@RequestBody Usuario usuario) {
-		Usuario usuarioNovo = dao.save(usuario);
-		return ResponseEntity.status(201).body(usuarioNovo);
+	public ResponseEntity<Usuario> alterarUsuario (@RequestBody Usuario usuario) {
+		return ResponseEntity.status(201).body(usuarioService.atualizarUsuario(usuario));
 	}
 	
 	@DeleteMapping("/{id}")
 	public ResponseEntity<?> excluirUsuario (@PathVariable Integer id){
-		dao.deleteById(id);
+		usuarioService.excluirUsuario(id);
 		return ResponseEntity.status(204).build();
 	}
 
 	@DeleteMapping("/all")
-	public void excluirTodosUsuarios() {
-		dao.deleteAll();
+	public ResponseEntity<?> excluirTodosUsuarios() {
+		usuarioService.excluirTodosUsuarios();
+		return ResponseEntity.status(204).build();
 	}
 }

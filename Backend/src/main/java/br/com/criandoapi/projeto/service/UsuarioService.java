@@ -2,6 +2,7 @@ package br.com.criandoapi.projeto.service;
 
 import br.com.criandoapi.projeto.entity.Usuario;
 import br.com.criandoapi.projeto.repository.IUsuario;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -25,6 +26,20 @@ public class UsuarioService {
         Usuario usarioNovo = repository.save(usuario);
         return usuario;
     }
+
+    public Usuario atualizarUsuario(Usuario usuario) {
+        Usuario usarioNovo = repository.save(usuario);
+        return usuario;
+    }
+
+    public void excluirUsuario(Integer id) {
+        repository.deleteById(id);
+    }
+
+    public void excluirTodosUsuarios() {
+        repository.deleteAll();
+    }
+
 
 
 }
