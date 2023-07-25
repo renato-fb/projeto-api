@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import br.com.criandoapi.projeto.entity.Usuario;
 import br.com.criandoapi.projeto.repository.IUsuario;
+import org.springframework.web.client.HttpClientErrorException;
 
 import javax.validation.Valid;
 
@@ -72,9 +73,8 @@ public class UsuarioController {
 			String fieldName = ((FieldError) error).getField();
 			String errorMessage = error.getDefaultMessage();
 			errors.put(fieldName, errorMessage);
-
 		}));
-
 		return errors;
 	}
+
 }
