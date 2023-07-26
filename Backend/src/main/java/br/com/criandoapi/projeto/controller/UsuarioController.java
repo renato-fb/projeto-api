@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import br.com.criandoapi.projeto.dto.UsuarioDto;
+import br.com.criandoapi.projeto.security.Token;
 import br.com.criandoapi.projeto.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -56,12 +58,12 @@ public class UsuarioController {
 	}
 
 	@PostMapping("/login")
-	public ResponseEntity<Usuario> validarSenha(@Valid @RequestBody Usuario usuario) {
-		Boolean valid = usuarioService.validarSenha(usuario);
-		if(!valid) {
-			return ResponseEntity.status(HttpStatus.UNAUTHORIZED).build();
+	public ResponseEntity<Token> logar(@Valid @RequestBody UsuarioDto usuario) {
+		Token token = usuarioService.gerarToken(usuario);
+		if(token != null) {
+			return ResponseEntity.ok(token);
 		}
-		return ResponseEntity.status(200).build();
+		return ResponseEntity.status(403).build();
 	}
 
 	@ResponseStatus(HttpStatus.BAD_REQUEST)
