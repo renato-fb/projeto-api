@@ -20,6 +20,7 @@ import org.springframework.web.client.HttpClientErrorException;
 
 import javax.validation.Valid;
 
+
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/usuarios")
