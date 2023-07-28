@@ -1,17 +1,11 @@
 package br.com.criandoapi.projeto.entity;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.Table;
-import javax.validation.constraints.*;
+import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Data
 @Entity
@@ -34,6 +28,7 @@ public class Usuario {
 	private String email;
 
 	@NotBlank(message = "A senha é obrigatório!")
+	@Size(min = 5 , message = "A senha deve ter no mínimo 3 caracteres!")
 	@Column(name = "senha", columnDefinition = "TEXT", nullable = true)
 	private String senha;
 }

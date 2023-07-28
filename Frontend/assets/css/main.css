@@ -84,39 +84,6 @@ body {
   position: relative;
   padding-bottom: 0.5rem;
 }
-.container .form__group--name {
-  margin-top: 5rem;
-}
-.container .form__group--email {
-  margin-top: 2rem;
-}
-.container .form__group--password {
-  margin-top: 2rem;
-}
-.container .form__group--submit::before, .container .form__group--submit::after {
-  content: unset !important;
-}
-.container .form__group--submit i {
-  margin-right: 1rem;
-}
-.container .form__group--submit button {
-  color: rgba(255, 255, 255, 0.76);
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  margin-top: 5rem;
-  background: linear-gradient(45deg, rgba(255, 35, 35, 0.231372549), rgba(255, 102, 102, 0.4509803922));
-  border-radius: 1rem;
-  border: 0;
-  padding: 1.5rem 4rem 1.5rem 3rem;
-  width: fit-content;
-  transition: 0.3s all ease;
-  background-size: 200%;
-  cursor: pointer;
-  font: 400 1.5rem "Poppins", serif;
-}
-.container .form__group--submit button:hover {
-  background-position-x: -10rem;
-  color: white;
-}
 .container .form__group:not(:last-child)::before {
   content: "";
   position: absolute;
@@ -167,16 +134,58 @@ body {
   color: rgba(255, 255, 255, 0.527);
   transition: 0.3s all ease;
 }
-.container .form__validation {
+.container .form__group--name {
+  margin-top: 5rem;
+}
+.container .form__group--email {
+  margin-top: 2rem;
+}
+.container .form__group--password {
+  margin-top: 2rem;
+}
+.container .form__group--submit button {
+  padding: 1.5rem 4rem 1.5rem 3rem;
+}
+.container .form__group--submit::before, .container .form__group--submit::after {
+  content: unset !important;
+}
+.container .form__group--submit i {
+  margin-right: 1rem;
+}
+.container__validation {
   display: none;
   text-align: center;
   margin-top: 5rem;
 }
-.container .form__validation span {
-  display: inline-block;
+.container__validation span {
   font: 400 1.5rem "Poppins", serif;
   background: rgba(255, 255, 255, 0.1294117647);
   padding: 0.5rem 1rem;
   border-radius: 5px;
   color: #07ff00;
+  position: absolute;
+  width: max-content;
+  left: 50%;
+  transform: translatex(-50%);
+}
+
+.btn {
+  display: inline-block;
+  color: rgba(255, 255, 255, 0.76);
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  margin-top: 5rem;
+  background: linear-gradient(45deg, rgba(255, 35, 35, 0.231372549), rgba(255, 102, 102, 0.4509803922));
+  border-radius: 1rem;
+  border: 0;
+  padding: 1.5rem 3rem;
+  width: fit-content;
+  transition: 0.3s all ease;
+  background-size: 230%;
+  cursor: pointer;
+  font: 400 1.5rem "Poppins", serif;
+  text-decoration: none;
+}
+.btn:hover {
+  background-position-x: -10rem;
+  color: white;
 }

@@ -1,13 +1,16 @@
 package br.com.criandoapi.projeto.controller;
 
+import java.sql.SQLIntegrityConstraintViolationException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import br.com.criandoapi.projeto.dto.UsuarioDto;
 import br.com.criandoapi.projeto.security.Token;
 import br.com.criandoapi.projeto.service.UsuarioService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -18,6 +21,8 @@ import br.com.criandoapi.projeto.entity.Usuario;
 import br.com.criandoapi.projeto.repository.IUsuario;
 import org.springframework.web.client.HttpClientErrorException;
 
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 
 
@@ -67,17 +72,6 @@ public class UsuarioController {
 		return ResponseEntity.status(403).build();
 	}
 
-	@ResponseStatus(HttpStatus.BAD_REQUEST)
-	@ExceptionHandler(MethodArgumentNotValidException.class)
-	public Map<String, String> handleValidationException(MethodArgumentNotValidException ex) {
-		Map<String, String> errors = new HashMap<>();
-
-		ex.getBindingResult().getAllErrors().forEach((error -> {
-			String fieldName = ((FieldError) error).getField();
-			String errorMessage = error.getDefaultMessage();
-			errors.put(fieldName, errorMessage);
-		}));
-		return errors;
-	}
 
 }
+

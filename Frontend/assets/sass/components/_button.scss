@@ -1,0 +1,22 @@
+.btn {
+    display: inline-block;
+    color: rgba(255, 255, 255, 0.76);
+    box-shadow: 0px 2px 4px rgba(0 0 0 / .1);
+    margin-top: 5rem;
+    background: linear-gradient(45deg,  #ff23233b,  #ff666673);
+    border-radius: 1rem;
+    border: 0;
+    padding: 1.5rem 3rem;
+    width: fit-content;
+    transition: $transition-text;
+    background-size: 230%;
+    cursor: pointer;
+    font: 400 1.5rem "Poppins", serif;
+    text-decoration: none;
+
+    &:hover {
+        background-position-x: -10rem;
+        color: white;
+        
+    }
+}

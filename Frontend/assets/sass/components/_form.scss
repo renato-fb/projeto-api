@@ -24,11 +24,11 @@
         &__title {
             text-align: center;
             color: white;
-            
+
             & span {
-                font: 600  4rem "Poppins", serif;
+                font: 600 4rem "Poppins", serif;
                 background: linear-gradient(45deg, #ffffff, #ff6666);
-                filter: drop-shadow(0px 2px 4px rgba(0 0 0 / .5)) ;
+                filter: drop-shadow(0px 2px 4px rgba(0 0 0 / .5));
                 -webkit-background-clip: text;
                 -webkit-text-fill-color: transparent;
                 background-size: 200% 100%;
@@ -37,6 +37,68 @@
         }
 
         &__group {
+            &:not(:last-child)::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 1px;
+                background-color: rgba(255, 255, 255, 0.527);
+            }
+    
+            &:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 0%;
+                height: 1px;
+                background-color: rgba(255, 255, 255, 0.993);
+            }
+    
+            &:focus-within,
+            &:hover {
+                &::after {
+                    transition: .5s all ease;
+                    width: 100%;
+                }
+    
+                & input::placeholder {
+                    color: white;
+                }
+    
+                & i {
+                    color: white;
+                }
+            }
+    
+            & i {
+                transition: $transition-text;
+                font-size: 2rem;
+                color: rgba(255, 255, 255, 0.76);
+            }
+    
+            & input {
+                margin-left: 1rem;
+                border: 0;
+                background: transparent;
+                padding: 1rem;
+                color: white;
+                font: 400 1.5rem "Poppins", serif;
+    
+                &:focus {
+                    outline: 0;
+                    color: rgb(255, 255, 255);
+                    transition: $transition-text;
+                }
+    
+                &::placeholder {
+                    color: rgba(255, 255, 255, 0.527);
+                    transition: $transition-text;
+                }
+            }
+
             position: relative;
             padding-bottom: .5rem;
 
@@ -54,110 +116,39 @@
 
             &--submit {
 
-                &::before, &::after {
+                & button {
+                    padding: 1.5rem 4rem 1.5rem 3rem;
+                }
+
+                &::before,
+                &::after {
                     content: unset !important;
                 }
-                
+
                 & i {
                     margin-right: 1rem;
-                }
-
-                & button {
-                    color: rgba(255, 255, 255, 0.76);
-                    box-shadow: 0px 2px 4px rgba(0 0 0 / .1);
-                    margin-top: 5rem;
-                    background: linear-gradient(45deg,  #ff23233b,  #ff666673);
-                    border-radius: 1rem;
-                    border: 0;
-                    padding: 1.5rem 4rem 1.5rem 3rem;
-                    width: fit-content;
-                    transition: $transition-text;
-                    background-size: 200%;
-                    cursor: pointer;
-                    font: 400 1.5rem "Poppins", serif;
-
-                    &:hover {
-                        background-position-x: -10rem;
-                        color: white;
-                        
-                    }
-                }
-            }
-
-            &:not(:last-child)::before {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 1px;
-                background-color:  rgba(255, 255, 255, 0.527);
-            }
-
-            &:not(:last-child)::after {
-                content: "";
-                position: absolute;
-                bottom: 0;
-                left: 0;
-                width: 0%;
-                height: 1px;
-                background-color:  rgba(255, 255, 255, 0.993);
-            }
-
-            &:focus-within, &:hover {
-                &::after {
-                transition: .5s all ease;
-                width: 100%;
-                }
-                & input::placeholder {
-                    color: white;
-                }
-
-                & i {
-                    color: white;
-                }
-            }
-
-            & i {
-                transition: $transition-text;
-                font-size: 2rem;
-                color: rgba(255, 255, 255, 0.76);
-            }
-
-            & input {
-                margin-left: 1rem;
-                border: 0;
-                background: transparent;
-                padding: 1rem;
-                color: white;
-                font: 400 1.5rem "Poppins", serif;
-
-                &:focus {
-                    outline: 0;
-                    color:  rgb(255, 255, 255);
-                    transition: $transition-text;
-                }
-
-                &::placeholder {
-                    color:  rgba(255, 255, 255, 0.527);
-                    transition: $transition-text;
                 }
             }
         }
 
-        &__validation {
-            display: none;
-            text-align: center;
-            margin-top: 5rem;
 
-            & span {
-                display: inline-block;
-                font: 400 1.5rem "Poppins", serif;
-                background: #ffffff21;
-                padding: 0.5rem 1rem;
-                border-radius: 5px;
-                color:  #07ff00;
-            }
+    }
+
+    &__validation {
+        display: none;
+        text-align: center;
+        margin-top: 5rem;
+
+        & span {
+            font: 400 1.5rem "Poppins", serif;
+            background: #ffffff21;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            color: #07ff00;
+            position: absolute;
+            width: max-content;
+            left: 50%;
+            transform: translatex(-50%);
         }
     }
 }

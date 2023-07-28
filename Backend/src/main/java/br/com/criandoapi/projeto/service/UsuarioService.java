@@ -5,11 +5,8 @@ import br.com.criandoapi.projeto.entity.Usuario;
 import br.com.criandoapi.projeto.repository.IUsuario;
 import br.com.criandoapi.projeto.security.Token;
 import br.com.criandoapi.projeto.security.TokenUtil;
-import org.slf4j.ILoggerFactory;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -42,14 +39,14 @@ public class UsuarioService {
         logger.info("Usuario: " + getLogado() + " Criando usuário");
         String encoder = this.passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(encoder);
-        return usuario;
+        return repository.save(usuario);
     }
 
     public Usuario editarUsuario(Usuario usuario) {
         logger.info("Usuario: " + getLogado() + " Editando usuário: " + usuario);
         String encoder = this.passwordEncoder.encode(usuario.getSenha());
         usuario.setSenha(encoder);
-        return usuario;
+        return repository.save(usuario);
     }
 
     public boolean excluirUsuario(Integer id) {
