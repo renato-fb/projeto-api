@@ -12,6 +12,25 @@
         padding: 5rem;
         border-radius: 5px;
 
+
+        &__validation {
+            display: none;
+            text-align: center;
+            margin-top: 5rem;
+
+            & span {
+                font: 400 1.5rem "Poppins", serif;
+                background: #ffffff21;
+                padding: 0.5rem 1rem;
+                border-radius: 5px;
+                color: #07ff00;
+                position: absolute;
+                width: max-content;
+                left: 50%;
+                transform: translatex(-50%);
+            }
+        }
+
         & img {
             position: absolute;
             width: 35%;
@@ -46,7 +65,7 @@
                 height: 1px;
                 background-color: rgba(255, 255, 255, 0.527);
             }
-    
+
             &:not(:last-child)::after {
                 content: "";
                 position: absolute;
@@ -56,29 +75,29 @@
                 height: 1px;
                 background-color: rgba(255, 255, 255, 0.993);
             }
-    
+
             &:focus-within,
             &:hover {
                 &::after {
                     transition: .5s all ease;
                     width: 100%;
                 }
-    
+
                 & input::placeholder {
                     color: white;
                 }
-    
+
                 & i {
                     color: white;
                 }
             }
-    
+
             & i {
                 transition: $transition-text;
                 font-size: 2rem;
                 color: rgba(255, 255, 255, 0.76);
             }
-    
+
             & input {
                 margin-left: 1rem;
                 border: 0;
@@ -86,13 +105,13 @@
                 padding: 1rem;
                 color: white;
                 font: 400 1.5rem "Poppins", serif;
-    
+
                 &:focus {
                     outline: 0;
                     color: rgb(255, 255, 255);
                     transition: $transition-text;
                 }
-    
+
                 &::placeholder {
                     color: rgba(255, 255, 255, 0.527);
                     transition: $transition-text;
@@ -134,21 +153,4 @@
 
     }
 
-    &__validation {
-        display: none;
-        text-align: center;
-        margin-top: 5rem;
-
-        & span {
-            font: 400 1.5rem "Poppins", serif;
-            background: #ffffff21;
-            padding: 0.5rem 1rem;
-            border-radius: 5px;
-            color: #07ff00;
-            position: absolute;
-            width: max-content;
-            left: 50%;
-            transform: translatex(-50%);
-        }
-    }
 }

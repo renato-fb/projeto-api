@@ -41,6 +41,11 @@ public class UsuarioController {
 		return ResponseEntity.status(200).body(usuarioService.listarUsuarios());
 	}
 
+	@GetMapping("/{id}")
+	public ResponseEntity<Usuario> listarUsuarios (@PathVariable Integer id) {
+		return ResponseEntity.status(200).body(usuarioService.listarUsuario(id));
+	}
+
 	@PostMapping
 	public ResponseEntity<Usuario> criarUsuario (@Valid @RequestBody Usuario usuario) {
 		return ResponseEntity.status(201).body(usuarioService.criarUsuario(usuario));
@@ -71,7 +76,5 @@ public class UsuarioController {
 		}
 		return ResponseEntity.status(403).build();
 	}
-
-
 }
 

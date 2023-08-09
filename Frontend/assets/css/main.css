@@ -59,6 +59,22 @@ body {
   padding: 5rem;
   border-radius: 5px;
 }
+.container .form__validation {
+  display: none;
+  text-align: center;
+  margin-top: 5rem;
+}
+.container .form__validation span {
+  font: 400 1.5rem "Poppins", serif;
+  background: rgba(255, 255, 255, 0.1294117647);
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #07ff00;
+  position: absolute;
+  width: max-content;
+  left: 50%;
+  transform: translatex(-50%);
+}
 .container .form img {
   position: absolute;
   width: 35%;
@@ -151,22 +167,6 @@ body {
 }
 .container .form__group--submit i {
   margin-right: 1rem;
-}
-.container__validation {
-  display: none;
-  text-align: center;
-  margin-top: 5rem;
-}
-.container__validation span {
-  font: 400 1.5rem "Poppins", serif;
-  background: rgba(255, 255, 255, 0.1294117647);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-  color: #07ff00;
-  position: absolute;
-  width: max-content;
-  left: 50%;
-  transform: translatex(-50%);
 }
 
 .btn {

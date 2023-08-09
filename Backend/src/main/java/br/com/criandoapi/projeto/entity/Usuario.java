@@ -1,12 +1,16 @@
 package br.com.criandoapi.projeto.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+@AllArgsConstructor
+@NoArgsConstructor
 @Data
 @Entity
 @Table(name = "usuario")
@@ -19,7 +23,7 @@ public class Usuario {
 
 	@NotBlank(message = "O nome é obrigatório!")
 	@Size(min = 3 , message = "O nome deve ter no mínimo 3 caracteres!")
-	@Column(name = "nome_completo", length = 200, nullable = true)
+	@Column(name = "nome", length = 200, nullable = true)
 	private String nome;
 
 	@Email(message = "Insira um email válido!")
@@ -28,7 +32,8 @@ public class Usuario {
 	private String email;
 
 	@NotBlank(message = "A senha é obrigatório!")
-	@Size(min = 5 , message = "A senha deve ter no mínimo 3 caracteres!")
+	@Size(min = 5 , message = "A senha deve ter no mínimo 5 caracteres!")
 	@Column(name = "senha", columnDefinition = "TEXT", nullable = true)
 	private String senha;
+
 }

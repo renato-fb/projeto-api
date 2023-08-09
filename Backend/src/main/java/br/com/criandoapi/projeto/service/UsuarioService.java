@@ -16,6 +16,7 @@ import org.springframework.stereotype.Service;
 
 import javax.validation.Valid;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class UsuarioService {
@@ -31,8 +32,14 @@ public class UsuarioService {
     }
 
     public List<Usuario> listarUsuarios () {
-        logger.info("Usuario: " + getLogado() + " Listando Usarios");
+        logger.info("Usuario: " + getLogado() + " Listando usuarios");
         return repository.findAll();
+    }
+
+    public Usuario listarUsuario (Integer id) {
+        logger.info("Usuario: " + getLogado() + " Listando usuarios");
+        Optional<Usuario> usuario = repository.findById(id);
+        return usuario.get();
     }
 
     public Usuario criarUsuario(Usuario usuario) {
