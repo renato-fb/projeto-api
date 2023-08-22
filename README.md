@@ -6,7 +6,7 @@
 Full-stack personal project undertaken with the intention of combining and applying my skills. The following technologies were used:
 - Spring Boot RESTful API following the MVC pattern, with JWT Token for security.
 - Authentication, validation, and authorization using dependencies in the pom.xml.
-- Front-end and back-end architecture..
+- Front-end and back-end architecture.
 - Object-relational mapping with JPA and Hibernate.
 - MySQL database.
 - HTML following the BEM standard, CSS3 using SASS as a pre-processor, with the 7-1 architecture.
