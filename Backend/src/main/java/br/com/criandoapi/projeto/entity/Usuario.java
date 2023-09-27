@@ -19,7 +19,7 @@ public class Usuario {
 
 	@NotBlank(message = "O nome é obrigatório!")
 	@Size(min = 3 , message = "O nome deve ter no mínimo 3 caracteres!")
-	@Column(name = "nome_completo", length = 200, nullable = true)
+	@Column(name = "nome", length = 200, nullable = true)
 	private String nome;
 
 	@Email(message = "Insira um email válido!")

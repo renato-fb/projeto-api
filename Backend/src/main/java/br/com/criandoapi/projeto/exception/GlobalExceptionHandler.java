@@ -36,8 +36,8 @@ public class GlobalExceptionHandler {
     public Map<String, String> handleDataIntegrityViolationException(DataIntegrityViolationException ex) {
         Map<String, String> errorMap = new HashMap<>();
 
-        errorMap.put("error", "Email duplicado");
-        errorMap.put("message", "O email inserido já está sendo utilizado!");
+        errorMap.put("Erro", "Email duplicado");
+        errorMap.put("Mensagem:", "O email inserido já está sendo utilizado!");
 
         return errorMap;
     }

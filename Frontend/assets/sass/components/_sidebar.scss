@@ -1,0 +1,30 @@
+.sidebar {
+    // width: 0;
+    // overflow: hidden;
+    padding: 2.5rem;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.04);
+
+    &__logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 2rem;
+    
+            img {
+                width: 6rem;
+                opacity: .5;
+            }
+        }
+
+    &__menu {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+
+        &-link {
+            text-decoration: none;
+            color: white;
+            margin-top: 1rem;
+        }
+    }
+}

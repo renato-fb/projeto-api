@@ -14,9 +14,10 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configure(HttpSecurity httpSec) throws Exception {
         httpSec.csrf().disable()
                 .authorizeHttpRequests()
-                .antMatchers(HttpMethod.POST, "/usuarios/login").permitAll();
-//                .antMatchers(HttpMethod.GET, "/usuarios").permitAll()
+//                .antMatchers(HttpMethod.POST, "/usuarios/login").permitAll()
+                .antMatchers(HttpMethod.POST, "/usuarios").permitAll();
 //                .anyRequest().authenticated().and().cors();
         httpSec.addFilterBefore(new SecurityFilter(), UsernamePasswordAuthenticationFilter.class);
     }
 }
+

@@ -27,6 +27,11 @@ html {
 
 body {
   box-sizing: border-box;
+  background-image: linear-gradient(45deg, #FC466B, #3F5EFB);
+  width: 100vw;
+  height: 100vh;
+  font: 400 1.5rem "Poppins", serif;
+  color: white;
 }
 @media only screen and (max-width: 56.25em) {
   body {
@@ -106,6 +111,9 @@ body {
   transition: 0.5s all ease;
   width: 100%;
 }
+.container .form__group:focus-within input::-moz-placeholder, .container .form__group:hover input::-moz-placeholder {
+  color: white;
+}
 .container .form__group:focus-within input::placeholder, .container .form__group:hover input::placeholder {
   color: white;
 }
@@ -130,6 +138,11 @@ body {
   color: rgb(255, 255, 255);
   transition: 0.3s all ease;
 }
+.container .form__group input::-moz-placeholder {
+  color: rgba(255, 255, 255, 0.527);
+  -moz-transition: 0.3s all ease;
+  transition: 0.3s all ease;
+}
 .container .form__group input::placeholder {
   color: rgba(255, 255, 255, 0.527);
   transition: 0.3s all ease;
@@ -152,18 +165,19 @@ body {
 .container .form__group--submit i {
   margin-right: 1rem;
 }
-.container__validation {
+.container .form__validation {
   display: none;
   text-align: center;
   margin-top: 5rem;
 }
-.container__validation span {
+.container .form__validation span {
   font: 400 1.5rem "Poppins", serif;
   background: rgba(255, 255, 255, 0.1294117647);
   padding: 0.5rem 1rem;
   border-radius: 5px;
   color: #07ff00;
   position: absolute;
+  width: -moz-max-content;
   width: max-content;
   left: 50%;
   transform: translatex(-50%);
@@ -178,6 +192,7 @@ body {
   border-radius: 1rem;
   border: 0;
   padding: 1.5rem 3rem;
+  width: -moz-fit-content;
   width: fit-content;
   transition: 0.3s all ease;
   background-size: 230%;
@@ -189,3 +204,62 @@ body {
   background-position-x: -10rem;
   color: white;
 }
+
+.notes {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.notes__list {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+.notes__item {
+  width: 20rem;
+  height: 20rem;
+  background-color: black;
+  background-color: rgba(255, 255, 255, 0.04);
+  padding: 5rem 2.5rem;
+  border-radius: 5px;
+}
+.notes__item-text--title, .notes__item-text--description {
+  color: rgb(228, 228, 228);
+  font: 400 1.5rem "Poppins", serif;
+}
+
+.sidebar {
+  padding: 2.5rem;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.04);
+}
+.sidebar__logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+.sidebar__logo img {
+  width: 6rem;
+  opacity: 0.5;
+}
+.sidebar__menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar__menu-link {
+  text-decoration: none;
+  color: white;
+  margin-top: 1rem;
+}
+
+.page-wrapper {
+  display: flex;
+}
+
+.main-content {
+  width: 100%;
+}/*# sourceMappingURL=main.css.map */
